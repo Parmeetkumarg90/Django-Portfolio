@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "manage.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "50mb"
+            }
+        }
+    ],
+    "env": {
+        "SECRET_KEY": "@Secret_key",
+        "DB_NAME": "@DB_Name",
+        "DB_USER": "@DB_User",
+        "DB_PASSWORD": "@DB_Password",
+        "DB_HOST": "@DB_Host",
+        "DB_PORT": "@DB_Port"
+    },
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/manage.py"
+        }
+    ]
+}
